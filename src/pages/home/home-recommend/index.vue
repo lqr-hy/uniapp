@@ -69,19 +69,18 @@ export default {
     }
   },
   mounted() {
+    uni.setNavigationBarTitle({
+      title:'推荐'
+    })
     this.getlist()  
   },
   methods: {
    async getlist(){
     const { res } = await this.request({
-      url: '/image/v3/homepage/vertical',
-      data: {
-        limit: 30,
-        order: 'hot',
-        skip: 0
-      }
+      url: '/v3/homepage/vertical',
+      data: this.params
     })
-
+    // console.log(res)
     //  判断还有没有数据
     if(res.vertical.length === 0){
       // 说明没有数据了

@@ -1,4 +1,4 @@
-const baseUrl = 'http://157.122.54.189:9088';
+const baseUrl = 'http://service.picasso.adesk.com';
 export default (params) => {
 
   wx.showLoading({
